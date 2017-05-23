@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
                 getApplicationContext(),
                 ClientActivity.class
         );
-        Content content = new Content(inputID);
+        Content content = new Content();
         intent.putExtra("content", content);
         startActivityForResult(intent, REQUEST_CODE_MENU);
         Toast.makeText(
