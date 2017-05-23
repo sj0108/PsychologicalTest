@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="227dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="question"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
+        app:layout_constraintVertical_bias="1.0"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.50"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/instance1"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:onClick="instance1clicked"
+                android:text="instance1"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"/>
+
+            <Button
+                android:id="@+id/instance3"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:onClick="instance3clicked"
+                android:text="instance3"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="0.50"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/instance2"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:onClick="instance2clicked"
+                android:text="instance2"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"/>
+
+            <Button
+                android:id="@+id/instance4"
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:onClick="instance4clicked"
+                android:text="instance4"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
