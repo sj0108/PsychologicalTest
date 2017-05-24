@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="resId">
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+        <item>@drawable/like</item>
+    </integer-array>
+
+    <string-array name="questions">
+        <item>Q. 1번 질문</item>
+        <item>Q. 2번 질문</item>
+    </string-array>
+
+    <string-array name="instances">
+        <item>아이스 커피|오렌지 주스|콜라|차</item>
+        <item>2번 보기-1|2번 보기-2|2번 보기-3|2번 보기-4</item>
+    </string-array>
+
+    <string-array name="title">
+        <item>이상적으로 생각하는 결혼생활</item>
+        <item>내가 만나고 싶어하는 이상형</item>
+        <item>나는 어떨 때 가장 겁 먹을까?</item>
+        <item>당신이 마실 음료수는?</item>
+        <item>빵 종류로 알아보는 나의 심리</item>
+        <item>숲 속에서 길을 잃은 나 산장 앞 나의 선택은?</item>
+        <item>펭귄</item>
+        <item>튤립</item>
+    </string-array>
+
+</resources>

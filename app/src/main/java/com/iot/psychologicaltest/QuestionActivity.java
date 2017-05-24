@@ -1,6 +1,6 @@
 package com.iot.psychologicaltest;
 
-import android.app.ListActivity;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import java.util.StringTokenizer;
 public class QuestionActivity extends AppCompatActivity
 {
     public static final int REQUEST_CODE_MENU = 1001;
+    int I_Num;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -24,14 +25,12 @@ public class QuestionActivity extends AppCompatActivity
         setContentView(R.layout.activity_question);
 
         Intent intent = getIntent();
-        if (intent != null)
-        {
-            Content content = (Content) intent.getSerializableExtra("content");
-            int Q_Num = content.getQ_num();
 
-            getQuestion(Q_Num);
-            getInstance(Q_Num);
-        }
+        Content content = (Content) intent.getSerializableExtra("content");
+        final int Q_Num = content.getQ_num();
+
+        getQuestion(Q_Num);
+        getInstance(Q_Num);
 
         ImageButton favoriteImageButton = (ImageButton) findViewById(R.id.back);
         favoriteImageButton.setOnClickListener(new View.OnClickListener(){
@@ -39,21 +38,27 @@ public class QuestionActivity extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(
                         getApplicationContext(),
-                        ListActivity.class);
+                        ListViewMain.class);
                 startActivityForResult(intent, 1001);
             }
         });
+
+
     }
 
     public void instance1clicked(View v)
     {
+        I_Num = 1;
+
         Intent intent = new Intent(
                 getApplicationContext(),
                 ResultActivity.class
         );
-        Content content = new Content();
+        Content content = new Content(Q_Num, I_Num);
         intent.putExtra("content", content);
+
         startActivityForResult(intent, REQUEST_CODE_MENU);
+
         Toast.makeText(
                 getApplicationContext(),
                 "instance1 clicked",
