@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+
+import static com.iot.psychologicaltest.R.array.subtitle;
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
@@ -41,6 +43,7 @@ public class ResultActivity extends AppCompatActivity {
         HomeButton=(ImageButton)findViewById(R.id.home);
         BackButton=(ImageButton)findViewById(R.id.BackButton);
         TwitButton=(ImageButton)findViewById(R.id.TwitButton);
+
 
 
         // ok
@@ -95,15 +98,15 @@ public class ResultActivity extends AppCompatActivity {
 
     }
 
-    /*public void getsubtitle (int Q_Num)
+    public void getsubtitle (int Q_Num)
     {
         Resources resources = getResources();
 
-        String[] subtitle = resources.getStringArray(questions);
-        TextView questionView = (TextView) findViewById(R.id.question);
+        String[] sub = resources.getStringArray(subtitle);
+        TextView SubView=(TextView)findViewById(R.id.subtitle);  //description부분
 
-        questionView.setText(questions[Q_Num - 1]);
-    }*/
+        SubView.setText(sub[Q_Num - 1]);
+    }
 
 
 }
