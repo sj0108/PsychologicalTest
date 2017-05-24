@@ -10,6 +10,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,7 +34,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        HomeButton=(Button)findViewById(R.id.home);
+        HomeButton=(ImageButton)findViewById(R.id.home);
         BackButton=(Button)findViewById(R.id.BackButton);
         TwitButton=(Button)findViewById(R.id.TwitButton);
 
@@ -46,13 +47,13 @@ public class ResultActivity extends AppCompatActivity {
         // Set title of Detail page
         // collapsingToolbar.setTitle(getString(R.string.item_title));
 
-
         /// ok
+        //123
 
         int postion = getIntent().getIntExtra(EXTRA_POSITION, 0);
         Resources resources = getResources();
 
-        String[] places = resources.getStringArray(R.array.title);
+        String[] places = resources.getStringArray(R.array.Resulttitle);
         collapsingToolbar.setTitle(places[postion % places.length]);
 
         String[] placeDetails = resources.getStringArray(R.array.TestContents);
@@ -67,7 +68,7 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void home (View v){
-        Intent homeIntent =new Intent(getApplicationContext(),가을Activity.class);
+        Intent homeIntent =new Intent(getApplicationContext(),ListViewMain.class);
         startActivity(homeIntent);
     }
 
