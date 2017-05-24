@@ -15,9 +15,6 @@ import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-
-import static com.iot.psychologicaltest.R.array.questions;
-import static com.iot.psychologicaltest.R.array.subtitle;
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
@@ -98,7 +95,7 @@ public class ResultActivity extends AppCompatActivity {
 
     }
 
-    public void getsubtitle (int Q_Num)
+    /*public void getsubtitle (int Q_Num)
     {
         Resources resources = getResources();
 
@@ -106,7 +103,7 @@ public class ResultActivity extends AppCompatActivity {
         TextView questionView = (TextView) findViewById(R.id.question);
 
         questionView.setText(questions[Q_Num - 1]);
-    }
+    }*/
 
 
 }

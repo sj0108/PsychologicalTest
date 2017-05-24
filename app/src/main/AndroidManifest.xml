@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListViewMain"></activity>
-        <activity android:name=".QuestionActivity"></activity>
+        <activity android:name=".QuestionActivity"
+                  android:exported="true"></activity>
         <activity android:name=".ResultActivity"></activity>
     </application>
 
