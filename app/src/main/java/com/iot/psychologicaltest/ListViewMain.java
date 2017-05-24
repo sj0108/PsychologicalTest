@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import static com.iot.psychologicaltest.QuestionActivity.REQUEST_CODE_MENU;
-
 public class ListViewMain extends AppCompatActivity {
 
     private ListAdapter adapter;
@@ -30,10 +28,10 @@ public class ListViewMain extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
-                Content content = new Content(position, 0);
+                Content content = new Content(position+1, 0);
                 intent.putExtra("content", content);
-                startActivityForResult(intent, REQUEST_CODE_MENU);
-                //startActivity(intent);
+                //startActivityForResult(intent, REQUEST_CODE_MENU);
+                startActivity(intent);
             }
         });
     }
@@ -50,6 +48,4 @@ public class ListViewMain extends AppCompatActivity {
             adapter.addItem(dto);
         }
     }
-
-
 }
