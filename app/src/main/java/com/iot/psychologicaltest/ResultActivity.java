@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.StringTokenizer;
 
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
@@ -32,50 +33,56 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        HomeButton=(ImageButton)findViewById(R.id.home);
-        BackButton=(ImageButton)findViewById(R.id.BackButton);
-        TwitButton=(ImageButton)findViewById(R.id.TwitButton);
+        Intent intent = getIntent();
+
+        if (intent != null) {
+            Content content = (Content) intent.getSerializableExtra("content");
+            final int Q_Num = content.getQ_num();
+            getsubtitle(Q_Num);
+            getContents(Q_Num);
+        }
 
 
-        
-
-        // Set Collapsing Toolbar layout to the screen
-        CollapsingToolbarLayout collapsingToolbar =
-                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-        // Set title of Detail page
-        //  collapsingToolbar.setTitle(getString(R.array.titleset));
+            HomeButton = (ImageButton) findViewById(R.id.home);
+            BackButton = (ImageButton) findViewById(R.id.BackButton);
+            TwitButton = (ImageButton) findViewById(R.id.TwitButton);
 
 
-        /// ok
+            // Set Collapsing Toolbar layout to the screen
+            CollapsingToolbarLayout collapsingToolbar =
+                    (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+            // Set title of Detail page
+            //  collapsingToolbar.setTitle(getString(R.array.titleset));
 
 
-        int postion = getIntent().getIntExtra(EXTRA_POSITION, 0);
-        Resources resources = getResources();
+            /// ok
 
-        String[] places = resources.getStringArray(R.array.titleset);
-        collapsingToolbar.setTitle(places[postion % places.length]);
 
-        String[] placeDetails = resources.getStringArray(R.array.TestContents);
-        TextView placeDetail = (TextView) findViewById(R.id.place_detail);
-        placeDetail.setText(placeDetails[postion % placeDetails.length]);
+            int postion = getIntent().getIntExtra(EXTRA_POSITION, 0);
+            Resources resources = getResources();
 
-        TypedArray placePictures = resources.obtainTypedArray(R.array.picture);
-        ImageView placePicutre = (ImageView) findViewById(R.id.image);
-        placePicutre.setImageDrawable(placePictures.getDrawable(postion % placePictures.length()));
+            String[] places = resources.getStringArray(R.array.titleset);
+            collapsingToolbar.setTitle(places[postion % places.length]);
 
-        placePictures.recycle();
+            String[] placeDetails = resources.getStringArray(R.array.TestContents);
+            TextView placeDetail = (TextView) findViewById(R.id.place_detail);
+            placeDetail.setText(placeDetails[postion % placeDetails.length]);
+
+            TypedArray placePictures = resources.obtainTypedArray(R.array.picture);
+            ImageView placePicutre = (ImageView) findViewById(R.id.image);
+            placePicutre.setImageDrawable(placePictures.getDrawable(postion % placePictures.length()));
+
+            placePictures.recycle();
+
     }
-
     public void home (View v){
-        Intent homeIntent =new Intent(getApplicationContext(),TestActivity.class);
+        Intent homeIntent =new Intent(getApplicationContext(),ListViewMain.class);
         startActivity(homeIntent);
+
     }
-
-
-
 
     public void backClicked (View v) {
-        Intent backIntent = new Intent(getApplicationContext(), TestActivity.class);
+        Intent backIntent = new Intent(getApplicationContext(), QuestionActivity.class);
         startActivity(backIntent);
 
     }
@@ -92,4 +99,39 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void getsubtitle (int Q_Num)
+    {
+        Resources resources = getResources();
+
+        String[] sub = resources.getStringArray(R.array.Resulttitle);
+        StringTokenizer resource = new StringTokenizer(sub[Q_Num - 1], "|");
+        TextView SubView=(TextView)findViewById(R.id.subtitle);  //description부분 소제목
+        SubView.setText(resource.nextToken());
+
+    }
+
+    public void getContents (int Q_Num)
+    {
+        Resources resources=getResources();
+
+        String[] Contents = resources.getStringArray(R.array.TestContents);
+        StringTokenizer Content = new StringTokenizer(Contents[Q_Num - 1], "|");
+
+        TextView placeDetail = (TextView) findViewById(R.id.place_detail);
+        placeDetail.setText(Content.nextToken());
+
+    }
+/*
+    public void getPictures (int I_Num)
+    {
+        Resources resources=getResources();
+        String[] Pictures = resources.getStringArray(R.array.picture);
+        StringTokenizer picture = new StringTokenizer(Contents[I_Num - 1], "|");
+        ImageView image = (ImageView) findViewById(R.id.image);
+        image.setImageDrawable();
+    }
+*/
+
+
 }
