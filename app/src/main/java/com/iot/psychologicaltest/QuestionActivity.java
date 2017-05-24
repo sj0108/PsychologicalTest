@@ -103,8 +103,8 @@ public class QuestionActivity extends AppCompatActivity
 
     public void getInstance(int Q_Num)
     {
-        Resources resources = getResources();
 
+        Resources resources = getResources();
         String[] instances = resources.getStringArray(R.array.instances);
         StringTokenizer instance = new StringTokenizer(instances[Q_Num - 1], "|");
 
@@ -119,7 +119,7 @@ public class QuestionActivity extends AppCompatActivity
 
         Button instance4Button = (Button) findViewById(R.id.instance4);
         instance4Button.setText(instance.nextToken());
+
+
     }
-
 }
-

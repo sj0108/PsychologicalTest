@@ -39,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
         TwitButton=(ImageButton)findViewById(R.id.TwitButton);
 
 
-        
+
 
         // Set Collapsing Toolbar layout to the screen
         CollapsingToolbarLayout collapsingToolbar =
