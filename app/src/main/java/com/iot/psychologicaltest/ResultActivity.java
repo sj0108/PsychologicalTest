@@ -15,6 +15,8 @@ import android.widget.TextView;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import static com.iot.psychologicaltest.QuestionActivity.REQUEST_CODE_MENU;
+
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
@@ -66,19 +68,22 @@ public class ResultActivity extends AppCompatActivity {
         placePictures.recycle();
     }
 
-    public void home (View v){
-        Intent homeIntent =new Intent(getApplicationContext(),TestActivity.class);
-        startActivity(homeIntent);
+    public void home(View v){
+        Intent intent = new Intent(
+                getApplicationContext(),
+                ListViewMain.class
+        );
+        startActivityForResult(intent, REQUEST_CODE_MENU);
     }
 
-
-
-
-    public void backClicked (View v) {
-        Intent backIntent = new Intent(getApplicationContext(), TestActivity.class);
-        startActivity(backIntent);
-
+    public void backClicked(View v){
+        Intent intent = new Intent(
+                getApplicationContext(),
+                QuestionActivity.class
+        );
+        startActivityForResult(intent, REQUEST_CODE_MENU);
     }
+
 
     public void twit (View v) {
         String strLink = null;

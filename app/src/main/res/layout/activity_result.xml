@@ -108,9 +108,7 @@
                     android:background="@drawable/ic_arrow_back_black_24dp"
                     android:id="@+id/BackButton"
                     android:onClick="backClicked"
-                    android:layout_marginTop="50dp"
-
-                    />
+                    android:layout_marginTop="50dp"/>
 
                 <ImageButton
                     android:id="@+id/home"
@@ -130,7 +128,7 @@
                     android:layout_marginTop="50dp"
                     android:background="@drawable/ic_twit"
                     android:onClick="twit"
-                    android:layout_weight="0.13" />
+                    android:layout_weight="0.13"/>
 
 
             </LinearLayout>
