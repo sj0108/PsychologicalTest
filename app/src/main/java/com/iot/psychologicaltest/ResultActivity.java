@@ -10,7 +10,6 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,9 +33,9 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        HomeButton=(ImageButton)findViewById(R.id.home);
+        /*HomeButton=(ImageButton)findViewById(R.id.home);
         BackButton=(Button)findViewById(R.id.BackButton);
-        TwitButton=(Button)findViewById(R.id.TwitButton);
+        TwitButton=(Button)findViewById(R.id.TwitButton);*/
 
 
         // ok
