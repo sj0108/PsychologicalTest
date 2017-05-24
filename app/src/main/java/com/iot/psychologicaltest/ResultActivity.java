@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,13 +16,15 @@ import android.widget.TextView;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
+import static com.iot.psychologicaltest.R.array.questions;
+import static com.iot.psychologicaltest.R.array.subtitle;
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
 public class ResultActivity extends AppCompatActivity {
 
     ImageButton BackButton;
-    Button TwitButton;
+    ImageButton TwitButton;
     ImageButton HomeButton;
 
 
@@ -34,9 +35,15 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+
+        Intent intent = getIntent();
+        Content content = (Content) intent.getSerializableExtra("content");
+        final int Q_Num = content.getQ_num();
+
+
         HomeButton=(ImageButton)findViewById(R.id.home);
         BackButton=(ImageButton)findViewById(R.id.BackButton);
-        TwitButton=(Button)findViewById(R.id.TwitButton);
+        TwitButton=(ImageButton)findViewById(R.id.TwitButton);
 
 
         // ok
@@ -90,4 +97,16 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void getsubtitle (int Q_Num)
+    {
+        Resources resources = getResources();
+
+        String[] subtitle = resources.getStringArray(questions);
+        TextView questionView = (TextView) findViewById(R.id.question);
+
+        questionView.setText(questions[Q_Num - 1]);
+    }
+
+
 }
