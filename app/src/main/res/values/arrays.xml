@@ -11,8 +11,20 @@
         <item>@drawable/like</item>
     </integer-array>
 
-k    <string-array name="questions">
-        <item>Q. 1번 질문</item>
+    <string-array name="subtitle">
+        <item>당신이 마실 음료수는?</item>
+        <item>이상적으로 생각하는 결혼생활</item>
+        <item>내가 만나고 싶어하는 이상형</item>
+        <item>나는 어떨 때 가장 겁 먹을까?</item>
+        <item>빵 종류로 알아보는 나의 심리</item>
+        <item>숲 속에서 길을 잃은 나 산장 앞 나의 선택은?</item>
+        <item>펭귄</item>
+        <item>튤립</item>
+    </string-array>
+
+    <string-array name="questions">
+        <item>Q. 더운 여름\n친구와 카페에 간 당신,\n
+            하나의 음료수를 골라야 하는데\n어떤 음료수를 선택할까?</item>
         <item>Q. 2번 질문</item>
     </string-array>
 
@@ -21,9 +33,37 @@ k    <string-array name="questions">
         <item>2번 보기-1|2번 보기-2|2번 보기-3|2번 보기-4</item>
     </string-array>
 
+    <string-array name="Resulttitle">
+        <item>아픈 과거의 이야기는 건들지 말아줘!|
+        내 외모 지적 하지마!|
+        내 성격 가지고 뭐라 하지마!|
+        가족이나 친구는 건드리지 마!|</item>
+        <item>두번째 테스트 보기 1 타이틀|
+        두번째 테스트 보기 2 타이틀|
+        두번째 테스트 보기 3 타이틀|
+        두번째 테스트 보기 4 타이틀</item>
+    </string-array>
+
     <string-array name="TestContents">
-        <item>심리테스트 결과내용 적을곳이에요~~~~~~~~~~~~~~~~~~~~~~~~~~~</item>
-        <item>두번째 심리테스트 내용을 적~~~~~~~~~~~~~~~~~ㅇ</item>
+        <item>아이스 커피를 고른 당신, 당신은 스스로가 정해놓은 규칙에 엄격해요.
+            고집 또한 센 편! 이러한 유형의 사람들은 과거에 대해서 떠드는걸 아주 싫어해요.
+            특히 당신은 아픈 기억으로 남은 일을 끄집어 내서 상처를 들쑤시는 일을 참지 못해요.|
+        오렌지 주스를 고른 당신, 외모에 관련된 말은 듣고 싶지 않아요.
+            로맨티시스트로 자의식이 조금 강한 편.
+            그래서 외모에 대해 지적을 받거나 평가 받는 일은 정말 참을 수 없어요.
+            특히 자신의 콤플렉스라고 생각하는 부분을 직접 지적 받는 일만큼은 용서할 수 없는 타입!|
+        콜라를 고른 당신은 성격에 관한 지적을 받는 것을 싫어하는 사람.
+            놀기 좋아하지만 약간 무책임한 면들 때문에 다소 모난 성격이라는 말을 들어요.
+            성격을 바꿀 필요성을 느끼고 노력하고 있지만
+            그 부분에 대해서 직접 지적 받거나 장황한 설교를 듣는 것을 끔찍이 싫어하는 타입!|
+        차를 고른 당신은 주변 사람들을 소중히 생각 할 줄 아는 사람.
+            이런 당신은 가족과 친척, 친한 사람들에 대한 험담을 듣는것을 정말 싫어하죠.
+            자기와 친한 사람들의 험담을 들으면
+            마치 자기에 대한 안좋은 얘기를 들은 것과 같은 불쾌감을 느껴요.</item>
+        <item>두번째 테스트 보기 1 결과|
+            두번째 테스트 보기 2 결과|
+            두번째 테스트 보기 3 결과|
+            두번째 테스트 보기 4 결과</item>
     </string-array>
 
     <array name="picture">
@@ -35,7 +75,6 @@ k    <string-array name="questions">
         <item>@drawable/a</item>
     </array>
 
-
     <string-array name="titleset">
         <item>커피</item>
         <item>오렌지</item>
@@ -43,15 +82,6 @@ k    <string-array name="questions">
         <item>차</item>
     </string-array>
 
-    <string-array name="subtitle">
-        <item>이상적으로 생각하는 결혼생활</item>
-        <item>내가 만나고 싶어하는 이상형</item>
-        <item>나는 어떨 때 가장 겁 먹을까?</item>
-        <item>당신이 마실 음료수는?</item>
-        <item>빵 종류로 알아보는 나의 심리</item>
-        <item>숲 속에서 길을 잃은 나 산장 앞 나의 선택은?</item>
-        <item>펭귄</item>
-        <item>튤립</item>
-    </string-array>
+
 
 </resources>
