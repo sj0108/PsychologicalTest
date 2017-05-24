@@ -85,8 +85,7 @@
                 android:textSize="40dp"
                     android:layout_marginLeft="70dp"
                 android:layout_marginBottom="16dp"
-                    android:id="@+id/Des"
-
+                    android:id="@+id/subtitle"
                     />
 
         </LinearLayout>
