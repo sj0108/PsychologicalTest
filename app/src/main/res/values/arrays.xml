@@ -36,7 +36,7 @@ k    <string-array name="questions">
     </array>
 
 
-    <string-array name="title">
+    <string-array name="titleset">
         <item>커피</item>
         <item>오렌지</item>
         <item>콜라</item>

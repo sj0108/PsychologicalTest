@@ -1,6 +1,5 @@
 package com.iot.psychologicaltest;
 
-
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import static com.iot.psychologicaltest.R.array.subtitle;
 /**
  * Provides UI for the Detail page with Collapsing Toolbar.
  */
@@ -34,16 +32,9 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-
-        Intent intent = getIntent();
-        Content content = (Content) intent.getSerializableExtra("content");
-        final int Q_Num = content.getQ_num();
-
-
         HomeButton=(ImageButton)findViewById(R.id.home);
         BackButton=(ImageButton)findViewById(R.id.BackButton);
         TwitButton=(ImageButton)findViewById(R.id.TwitButton);
-
 
 
         // ok
@@ -52,15 +43,16 @@ public class ResultActivity extends AppCompatActivity {
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
         // Set title of Detail page
-        // collapsingToolbar.setTitle(getString(R.string.item_title));
+        //  collapsingToolbar.setTitle(getString(R.array.titleset));
+
 
         /// ok
-        //123
+
 
         int postion = getIntent().getIntExtra(EXTRA_POSITION, 0);
         Resources resources = getResources();
 
-        String[] places = resources.getStringArray(R.array.Resulttitle);
+        String[] places = resources.getStringArray(R.array.titleset);
         collapsingToolbar.setTitle(places[postion % places.length]);
 
         String[] placeDetails = resources.getStringArray(R.array.TestContents);
@@ -75,12 +67,15 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     public void home (View v){
-        Intent homeIntent =new Intent(getApplicationContext(),ListViewMain.class);
+        Intent homeIntent =new Intent(getApplicationContext(),TestActivity.class);
         startActivity(homeIntent);
     }
 
+
+
+
     public void backClicked (View v) {
-        Intent backIntent = new Intent(getApplicationContext(), QuestionActivity.class);
+        Intent backIntent = new Intent(getApplicationContext(), TestActivity.class);
         startActivity(backIntent);
 
     }
@@ -97,16 +92,4 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
-
-    public void getsubtitle (int Q_Num)
-    {
-        Resources resources = getResources();
-
-        String[] sub = resources.getStringArray(subtitle);
-        TextView SubView=(TextView)findViewById(R.id.subtitle);  //description부분
-
-        SubView.setText(sub[Q_Num - 1]);
-    }
-
-
 }
