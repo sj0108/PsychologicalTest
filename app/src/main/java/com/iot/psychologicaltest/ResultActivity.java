@@ -22,9 +22,9 @@ import java.net.URLEncoder;
  */
 public class ResultActivity extends AppCompatActivity {
 
-    Button BackButton;
+    ImageButton BackButton;
     Button TwitButton;
-    Button HomeButton;
+    ImageButton HomeButton;
 
 
     public static final String EXTRA_POSITION = "position";
@@ -35,7 +35,7 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         HomeButton=(ImageButton)findViewById(R.id.home);
-        BackButton=(Button)findViewById(R.id.BackButton);
+        BackButton=(ImageButton)findViewById(R.id.BackButton);
         TwitButton=(Button)findViewById(R.id.TwitButton);
 
 
