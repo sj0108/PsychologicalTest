@@ -1,18 +1,19 @@
 package com.iot.psychologicaltest;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.StringTokenizer;
 
-public class MainActivity extends AppCompatActivity
+public class QuestionActivity extends AppCompatActivity
 {
     public static final int REQUEST_CODE_MENU = 1001;
 
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_question);
 
         Intent intent = getIntent();
         if (intent != null)
@@ -31,13 +32,24 @@ public class MainActivity extends AppCompatActivity
             getQuestion(Q_Num);
             getInstance(Q_Num);
         }
+
+        ImageButton favoriteImageButton = (ImageButton) findViewById(R.id.back);
+        favoriteImageButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        ListActivity.class);
+                startActivityForResult(intent, 1001);
+            }
+        });
     }
 
     public void instance1clicked(View v)
     {
         Intent intent = new Intent(
                 getApplicationContext(),
-                Activity.class
+                ResultActivity.class
         );
         Content content = new Content();
         intent.putExtra("content", content);
@@ -103,3 +115,4 @@ public class MainActivity extends AppCompatActivity
     }
 
 }
+
