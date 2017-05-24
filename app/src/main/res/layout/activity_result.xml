@@ -99,7 +99,10 @@
                 android:text="Description"
                 android:textSize="40dp"
                     android:layout_marginLeft="70dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp"
+                    android:id="@+id/Des"
+
+                    />
 
         </LinearLayout>
 
@@ -142,14 +145,14 @@
 
                 <ImageButton
                     android:id="@+id/TwitButton"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="50dp"
                     android:onClick="twit"
                     android:text="Twit"
                     android:textColor="@color/colorAccent"
-                    android:background="drawable/ic_twit"
+                    android:background="@drawable/ic_twit"
                     />
 
             </LinearLayout>

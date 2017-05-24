@@ -21,13 +21,11 @@
         <item>2번 보기-1|2번 보기-2|2번 보기-3|2번 보기-4</item>
     </string-array>
 
-    <string-array name="Resulttitle">
-        <item>메이</item>
-        <item>메이코패스</item>
-        <item>리퍼탕</item>
-        <item>한조슛</item>
-        <item>솔져돌격</item>
-        <item>토르비욘탕탕</item>
+    <string-array name="subtitle">
+        <item>커피</item>
+        <item>오렌지</item>
+        <item>콜라</item>
+        <item>차</item>
     </string-array>
 
     <string-array name="TestContents">
