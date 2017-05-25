@@ -93,12 +93,12 @@ public class QuestionActivity extends AppCompatActivity
 
     public void getQuestion(int Q_Num)
     {
-        Resources resources = getResources();
 
+        Resources resources = getResources();
         String[] questions = resources.getStringArray(R.array.questions);
         TextView questionView = (TextView) findViewById(R.id.question);
 
-        questionView.setText(questions[Q_Num - 1]);
+         questionView.setText(questions[Q_Num - 1]);
     }
 
     public void getInstance(int Q_Num)
