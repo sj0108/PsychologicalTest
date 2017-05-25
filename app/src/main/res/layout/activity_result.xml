@@ -79,7 +79,8 @@
                 android:layout_height="wrap_content"
                 android:textColor="?attr/colorAccent"
                 android:text="Description"
-                android:textSize="40dp"
+                android:padding="15dp"
+                android:textSize="36sp"
                 android:layout_marginBottom="16dp"
                 android:id="@+id/subtitle"
                 />
@@ -89,7 +90,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="dd"
-                android:textSize="20dp"
+                android:textSize="23dp"
+                android:lineSpacingExtra="5dp"
+                android:padding="15dp"
                 android:textColor="@color/Mystyle"
 
                 />
