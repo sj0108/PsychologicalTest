@@ -49,7 +49,7 @@ public class ResultActivity extends AppCompatActivity {
             BackButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    backClicked(Q_Num, 3);
+                    backClicked(Q_Num, 0);
                 }
             });
         }
@@ -79,9 +79,8 @@ public class ResultActivity extends AppCompatActivity {
 
             placePictures.recycle();
 
-
-
     }
+
     public void home (View v){
         Intent homeIntent =new Intent(getApplicationContext(),ListViewMain.class);
         startActivity(homeIntent);

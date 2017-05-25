@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import java.util.StringTokenizer;
 
+import static com.iot.psychologicaltest.R.array.instances;
+
 public class QuestionActivity extends AppCompatActivity
 {
     public static final int REQUEST_CODE_MENU = 1001;
@@ -28,33 +30,35 @@ public class QuestionActivity extends AppCompatActivity
             final int Q_Num = content.getQ_num();
 
             getQuestion(Q_Num);
-            getInstance(Q_Num);
 
             Button instance1Button = (Button) findViewById(R.id.instance1);
+            Button instance2Button = (Button) findViewById(R.id.instance2);
+            Button instance3Button = (Button) findViewById(R.id.instance3);
+            Button instance4Button = (Button) findViewById(R.id.instance4);
+
+            instance1Button.setText(getInstance(Q_Num, 1));
+            instance2Button.setText(getInstance(Q_Num, 2));
+            instance3Button.setText(getInstance(Q_Num, 3));
+            instance4Button.setText(getInstance(Q_Num, 4));
+
             instance1Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     instanceClicked(Q_Num, 1);
                 }
             });
-
-            Button instance2Button = (Button) findViewById(R.id.instance2);
             instance2Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     instanceClicked(Q_Num, 2);
                 }
             });
-
-            Button instance3Button = (Button) findViewById(R.id.instance3);
             instance3Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     instanceClicked(Q_Num, 3);
                 }
             });
-
-            Button instance4Button = (Button) findViewById(R.id.instance4);
             instance4Button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -101,25 +105,18 @@ public class QuestionActivity extends AppCompatActivity
          questionView.setText(questions[Q_Num - 1]);
     }
 
-    public void getInstance(int Q_Num)
-    {
-
+    public String getInstance(int Q_Num, int I_Num) {
         Resources resources = getResources();
-        String[] instances = resources.getStringArray(R.array.instances);
-        StringTokenizer instance = new StringTokenizer(instances[Q_Num - 1], "|");
 
-        Button instance1Button = (Button) findViewById(R.id.instance1);
-        instance1Button.setText(instance.nextToken());
+        StringTokenizer instanceResource =
+                new StringTokenizer(resources.getStringArray(instances)[Q_Num - 1], "|");
+        String[] instances = new String[instanceResource.countTokens()];
+        int i = 0;
+        while (instanceResource.hasMoreTokens()){
+            instances[i] = instanceResource.nextToken();
+            i++;
+        }
 
-        Button instance2Button = (Button) findViewById(R.id.instance2);
-        instance2Button.setText(instance.nextToken());
-
-        Button instance3Button = (Button) findViewById(R.id.instance3);
-        instance3Button.setText(instance.nextToken());
-
-        Button instance4Button = (Button) findViewById(R.id.instance4);
-        instance4Button.setText(instance.nextToken());
-
-
+        return instances[I_Num - 1];
     }
 }
