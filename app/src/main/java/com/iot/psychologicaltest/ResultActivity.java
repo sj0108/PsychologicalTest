@@ -34,12 +34,15 @@ public class ResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result);
 
         Intent intent = getIntent();
-
+        int postion = getIntent().getIntExtra(EXTRA_POSITION, 0);
         if (intent != null) {
             Content content = (Content) intent.getSerializableExtra("content");
             final int I_Num=content.getI_num();
-            getsubtitle(I_Num);
-            getContents(I_Num);
+            final int Q_Num=content.getQ_num();
+
+            getsubtitle(Q_Num,I_Num);
+            getContents(Q_Num,I_Num);
+            getsettitle(Q_Num,I_Num);
         }
 
 
@@ -48,30 +51,11 @@ public class ResultActivity extends AppCompatActivity {
             TwitButton = (ImageButton) findViewById(R.id.TwitButton);
 
 
-            // Set Collapsing Toolbar layout to the screen
-            CollapsingToolbarLayout collapsingToolbar =
-                    (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
-            // Set title of Detail page
-            //  collapsingToolbar.setTitle(getString(R.array.titleset));
-
-
-            /// ok
-
-
-            int postion = getIntent().getIntExtra(EXTRA_POSITION, 0);
             Resources resources = getResources();
-
-            String[] places = resources.getStringArray(R.array.titleset);
-            collapsingToolbar.setTitle(places[postion % places.length]);
-
-            String[] placeDetails = resources.getStringArray(R.array.TestContents);
-            TextView placeDetail = (TextView) findViewById(R.id.place_detail);
-            placeDetail.setText(placeDetails[postion % placeDetails.length]);
 
             TypedArray placePictures = resources.obtainTypedArray(R.array.picture);
             ImageView placePicutre = (ImageView) findViewById(R.id.image);
             placePicutre.setImageDrawable(placePictures.getDrawable(postion % placePictures.length()));
-
             placePictures.recycle();
 
     }
@@ -100,17 +84,28 @@ public class ResultActivity extends AppCompatActivity {
 
     }
 
-    public void getsubtitle (int I_Num)
+    public void getsettitle(int Q_Num,int I_Num)
+    {
+        Resources resources = getResources();
+        String[] set = resources.getStringArray(R.array.instances);
+        StringTokenizer resource_I = new StringTokenizer(set[Q_Num-1], "|");
+
+        CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+
+        collapsingToolbar.setTitle(resource_I.nextToken());
+    }
+
+    public void getsubtitle (int Q_Num, int I_Num)
     {
         Resources resources = getResources();
         String[] sub = resources.getStringArray(R.array.Resulttitle);
         StringTokenizer resource = new StringTokenizer(sub[I_Num-1], "|");
         TextView SubView=(TextView)findViewById(R.id.subtitle);  //description부분 소제목
         SubView.setText(resource.nextToken());
-
     }
 
-    public void getContents (int I_Num)
+    public void getContents (int Q_Num, int I_Num)
     {
         Resources resources=getResources();
 
