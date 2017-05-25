@@ -153,10 +153,8 @@
     </array>
 
     <string-array name="titleset">
-        <item>커피</item>
-        <item>오렌지</item>
-        <item>콜라</item>
-        <item>차</item>
+        <item>아이스 커피|오렌지 주스|콜라|차</item>
+        <item>2번 보기-1|2번 보기-2|2번 보기-3|2번 보기-4</item>
     </string-array>
 
 
