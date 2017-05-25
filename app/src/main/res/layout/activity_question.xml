@@ -90,7 +90,7 @@
                 android:onClick="instance1clicked"
                 android:text="instance1"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/instance3"
@@ -102,7 +102,7 @@
                 android:onClick="instance3clicked"
                 android:text="instance3"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -122,7 +122,7 @@
                 android:onClick="instance2clicked"
                 android:text="instance2"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
 
             <Button
                 android:id="@+id/instance4"
@@ -134,7 +134,7 @@
                 android:onClick="instance4clicked"
                 android:text="instance4"
                 android:textColor="@android:color/black"
-                android:textSize="30sp"/>
+                android:textSize="20sp"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

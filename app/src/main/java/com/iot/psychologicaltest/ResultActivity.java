@@ -37,15 +37,22 @@ public class ResultActivity extends AppCompatActivity {
 
         if (intent != null) {
             Content content = (Content) intent.getSerializableExtra("content");
+            final int Q_Num=content.getQ_num();
             final int I_Num=content.getI_num();
             getsubtitle(I_Num);
             getContents(I_Num);
-        }
-
 
             HomeButton = (ImageButton) findViewById(R.id.home);
             BackButton = (ImageButton) findViewById(R.id.BackButton);
             TwitButton = (ImageButton) findViewById(R.id.TwitButton);
+
+            BackButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    backClicked(Q_Num, 3);
+                }
+            });
+        }
 
 
             // Set Collapsing Toolbar layout to the screen
@@ -74,17 +81,19 @@ public class ResultActivity extends AppCompatActivity {
 
             placePictures.recycle();
 
+
+
     }
     public void home (View v){
         Intent homeIntent =new Intent(getApplicationContext(),ListViewMain.class);
         startActivity(homeIntent);
-
     }
 
-    public void backClicked (View v) {
+    public void backClicked (int Q_Num, int I_Num) {
         Intent backIntent = new Intent(getApplicationContext(), QuestionActivity.class);
+        Content content = new Content(Q_Num, 0);
+        backIntent.putExtra("content", content);
         startActivity(backIntent);
-
     }
 
     public void twit (View v) {
@@ -97,7 +106,6 @@ public class ResultActivity extends AppCompatActivity {
         }
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(strLink));
         startActivity(intent);
-
     }
 
     public void getsubtitle (int I_Num)
@@ -107,7 +115,6 @@ public class ResultActivity extends AppCompatActivity {
         StringTokenizer resource = new StringTokenizer(sub[I_Num-1], "|");
         TextView SubView=(TextView)findViewById(R.id.subtitle);  //description부분 소제목
         SubView.setText(resource.nextToken());
-
     }
 
     public void getContents (int I_Num)
@@ -119,7 +126,6 @@ public class ResultActivity extends AppCompatActivity {
 
         TextView placeDetail = (TextView) findViewById(R.id.place_detail);
         placeDetail.setText(Content.nextToken());
-
     }
 /*
     public void getPictures (int I_Num)
