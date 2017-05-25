@@ -30,7 +30,6 @@ public class ListViewMain extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                 Content content = new Content(position+1, 0);
                 intent.putExtra("content", content);
-                //startActivityForResult(intent, REQUEST_CODE_MENU);
                 startActivity(intent);
             }
         });
@@ -38,7 +37,7 @@ public class ListViewMain extends AppCompatActivity {
 
     private void setData() {
         TypedArray arrResId = getResources().obtainTypedArray(R.array.resId);
-        String[] titles = getResources().getStringArray(R.array.subtitle);
+        String[] titles = getResources().getStringArray(R.array.testTitles);
 
         for (int i = 0; i < arrResId.length(); i++) {
             ListItem dto = new ListItem();

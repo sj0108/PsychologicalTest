@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.StringTokenizer;
 
@@ -15,8 +14,6 @@ import static com.iot.psychologicaltest.R.array.instances;
 
 public class QuestionActivity extends AppCompatActivity
 {
-    public static final int REQUEST_CODE_MENU = 1001;
-
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -29,6 +26,7 @@ public class QuestionActivity extends AppCompatActivity
             Content content = (Content) intent.getSerializableExtra("content");
             final int Q_Num = content.getQ_num();
 
+            getTestTitle(Q_Num);
             getQuestion(Q_Num);
 
             Button instance1Button = (Button) findViewById(R.id.instance1);
@@ -73,11 +71,7 @@ public class QuestionActivity extends AppCompatActivity
                 getApplicationContext(),
                 ListViewMain.class
         );
-        startActivityForResult(intent, REQUEST_CODE_MENU);
-        Toast.makeText(
-                getApplicationContext(),
-                "back clicked",
-                Toast.LENGTH_SHORT).show();
+        startActivity(intent);
     }
 
     public void instanceClicked(int Q_Num, int I_Num) {
@@ -87,22 +81,23 @@ public class QuestionActivity extends AppCompatActivity
         );
         Content content = new Content(Q_Num, I_Num);
         intent.putExtra("content", content);
-        startActivityForResult(intent, REQUEST_CODE_MENU);
-
-        Toast.makeText(
-                getApplicationContext(),
-                "instance" + I_Num + " clicked",
-                Toast.LENGTH_SHORT).show();
+        startActivity(intent);
     }
 
-    public void getQuestion(int Q_Num)
-    {
+    public void getTestTitle(int Q_Num) {
+        Resources resources = getResources();
+        String[] testTitles = resources.getStringArray(R.array.testTitles);
+        TextView testTitleView = (TextView) findViewById(R.id.testTitle);
 
+        testTitleView.setText(testTitles[Q_Num - 1]);
+    }
+
+    public void getQuestion(int Q_Num) {
         Resources resources = getResources();
         String[] questions = resources.getStringArray(R.array.questions);
         TextView questionView = (TextView) findViewById(R.id.question);
 
-         questionView.setText(questions[Q_Num - 1]);
+        questionView.setText(questions[Q_Num - 1]);
     }
 
     public String getInstance(int Q_Num, int I_Num) {
