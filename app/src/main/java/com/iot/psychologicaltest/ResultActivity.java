@@ -30,7 +30,8 @@ public class ResultActivity extends AppCompatActivity {
             final int Q_Num = content.getQ_num();
             final int I_Num = content.getI_num();
 
-            getTestTitle(Q_Num);
+            TextView testTitleView = (TextView) findViewById(R.id.testTitle);
+            testTitleView.setText(getTestTitle(Q_Num));
 
             TextView resultTitleView = (TextView) findViewById(R.id.resultTitle);
             resultTitleView.setText(getResultTitle(Q_Num, I_Num));
@@ -43,6 +44,14 @@ public class ResultActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     BackButtonClicked(Q_Num, 0);
+                }
+            });
+
+            ImageButton TwitButton = (ImageButton) findViewById(R.id.TwitButton);
+            TwitButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TwitButtonClicked(Q_Num, I_Num);
                 }
             });
         }
@@ -63,11 +72,11 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void TwitButtonClicked(View v) {
+    public void TwitButtonClicked(int Q_Num, int I_Num) {
         String strLink = null;
         try {
             strLink = String.format("http://twitter.com/intent/tweet?text=%s",
-                    URLEncoder.encode("공유하고픈 심리테스트~ ", "utf-8"));
+                    URLEncoder.encode(getTestTitle(Q_Num) + "\n\n" + getResult(Q_Num, I_Num), "utf-8"));
         } catch (UnsupportedEncodingException e1) {
             e1.printStackTrace();
         }
@@ -75,12 +84,11 @@ public class ResultActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void getTestTitle(int Q_Num) {
+    public String getTestTitle(int Q_Num) {
         Resources resources = getResources();
         String[] testTitles = resources.getStringArray(R.array.testTitles);
-        TextView testTitleView = (TextView) findViewById(R.id.testTitle);
 
-        testTitleView.setText(testTitles[Q_Num - 1]);
+        return testTitles[Q_Num-1];
     }
 
     public String getResultTitle(int Q_Num, int I_Num) {
