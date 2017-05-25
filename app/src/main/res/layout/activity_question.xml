@@ -72,23 +72,27 @@
                 android:id="@+id/instance1"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/transparent"
+                android:background="@android:color/background_light"
                 android:gravity="center"
                 android:text="instance1"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/instance3"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/transparent"
+                android:background="@android:color/background_light"
                 android:gravity="center"
                 android:text="instance3"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -102,23 +106,27 @@
                 android:id="@+id/instance2"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/transparent"
+                android:background="@android:color/background_light"
                 android:gravity="center"
                 android:text="instance2"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/instance4"
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/transparent"
+                android:background="@android:color/background_light"
                 android:gravity="center"
                 android:text="instance4"
                 android:textColor="@android:color/black"
-                android:textSize="20sp"/>
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
