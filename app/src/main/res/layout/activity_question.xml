@@ -83,11 +83,14 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="2.5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/background_light"
+
                 android:gravity="center"
                 android:text="instance1"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:background="@drawable/bt_corner"
+
+                />
 
             <Button
                 android:id="@+id/instance3"
@@ -98,11 +101,11 @@
                 android:layout_marginRight="2.5dp"
                 android:layout_marginTop="2.5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/background_light"
                 android:gravity="center"
                 android:text="instance3"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:background="@drawable/bt_corner"/>
         </LinearLayout>
 
         <LinearLayout
@@ -120,11 +123,11 @@
                 android:layout_marginLeft="2.5dp"
                 android:layout_marginRight="8dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/background_light"
                 android:gravity="center"
                 android:text="instance2"
                 android:textColor="@android:color/black"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:background="@drawable/bt_corner"/>
 
             <Button
                 android:id="@+id/instance4"
@@ -135,7 +138,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="2.5dp"
                 android:layout_weight="0.5"
-                android:background="@android:color/background_light"
+                android:background="@drawable/bt_corner"
                 android:gravity="center"
                 android:text="instance4"
                 android:textColor="@android:color/black"
