@@ -42,7 +42,6 @@ public class ListAdapter extends BaseAdapter {
             holder.imageView = (ImageView) convertView.findViewById(R.id.imageView);
             holder.textTitle = (TextView) convertView.findViewById(R.id.text_title);
 
-
             convertView.setTag(holder);
         } else {
             holder = (CustomViewHolder) convertView.getTag();
@@ -52,7 +51,6 @@ public class ListAdapter extends BaseAdapter {
 
         holder.imageView.setImageResource(dto.getResId());
         holder.textTitle.setText(dto.getTitle());
-
 
         return convertView;
     }

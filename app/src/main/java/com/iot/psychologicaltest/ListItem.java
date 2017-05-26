@@ -4,7 +4,6 @@ public class ListItem {
  private int resId;
  private String title;
 
-
  public int getResId() {
   return resId;
  }
